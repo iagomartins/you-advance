@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "YT-SEO-BR",
+  "version": "1.0.0",
+  "description": "Extensão para otimização de SEO no YouTube Studio com foco no mercado brasileiro.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://studio.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://studio.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["sidebar.html", "sidebar-main.js"],
+      "matches": ["https://studio.youtube.com/*"]
+    }
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "YT-SEO-BR"
+  }
+}
